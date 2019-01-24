@@ -6,3 +6,6 @@ homepage: https://github.com/salby/newsapi_client
 
 dependencies:
   http: ^0.12.0
+
+dev_dependencies:
+  test: ^1.5.1

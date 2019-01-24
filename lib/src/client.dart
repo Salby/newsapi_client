@@ -16,8 +16,7 @@ class NewsApiClient {
   Future<Map<String, dynamic>> topHeadlines(Map<String, dynamic> parameters) async {
     final Endpoint endpoint = DefaultEndpoints.topHeadlines;
     if (_validateParameters(parameters, endpoint)) {
-      final encodedParameters = _encodeParameters(parameters);
-      final response = await client.get(url + endpoint.name + '?' + encodedParameters);
+      final response = await client.get(_buildUrl(endpoint.name, parameters: parameters));
       return _handleResponse(response);
     } else {
       throw Exception('Given parameters are not valid.');
@@ -27,8 +26,7 @@ class NewsApiClient {
   Future<Map<String, dynamic>> everything(Map<String, dynamic> parameters) async {
     final Endpoint endpoint = DefaultEndpoints.everything;
     if (_validateParameters(parameters, endpoint)) {
-      final encodedParameters = _encodeParameters(parameters);
-      final response = await client.get(url + endpoint.name + '?' + encodedParameters);
+      final response = await client.get(_buildUrl(endpoint.name, parameters: parameters));
       return _handleResponse(response);
     } else {
       throw Exception('Given parameters are not valid.');
@@ -37,18 +35,19 @@ class NewsApiClient {
 
   Future<Map<String, dynamic>> sources({Map<String, dynamic> parameters: null}) async {
     final Endpoint endpoint = DefaultEndpoints.sources;
-    String encodedParameters;
     if (parameters != null && !_validateParameters(parameters, endpoint)) {
       throw Exception('Given parameters are not valid.');
-    } else {
-      encodedParameters = _encodeParameters(parameters);
     }
-    final response = await client.get(url + endpoint.name + '?' + (
-      parameters != null
-        ? encodedParameters
-        : ''
-    ));
+    final response = await client.get(_buildUrl(endpoint.name, parameters: parameters));
     return _handleResponse(response);
+  }
+
+  String _buildUrl(String endpointName, {Map<String, dynamic> parameters: null}) {
+    return  url
+          + endpointName
+          + '?'
+          + (parameters != null ? _encodeParameters(parameters) + '&' : '')
+          + 'apiKey=$apiKey';
   }
 
   Map<String, dynamic> _handleResponse(Response response) {
@@ -68,8 +67,6 @@ class NewsApiClient {
   }
 
   String _encodeParameters(Map<String, dynamic> parameters) {
-    return parameters.keys.map((key) {
-      '${Uri.encodeComponent(key)}=${Uri.encodeComponent(parameters[key])}';
-    }).join('&');
+    return parameters.keys.map((key) => '${Uri.encodeComponent(key)}=${Uri.encodeComponent(parameters[key])}').join('&');
   }
 }
