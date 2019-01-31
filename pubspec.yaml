@@ -1,5 +1,5 @@
 name: newsapi_client
-description: A client for the newsapi.org API (v2) written in dart.
+description: A client for the newsapi.org API (v2) written in dart. You can get access to the API by signing up at https://newsapi.org.
 version: 0.1.4
 author: Sander Dalby Larsen <srdlarsen@gmail.com>
 homepage: https://github.com/salby/newsapi_client
