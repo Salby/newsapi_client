@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1 - 2019-02-01
+
+### Added
+- Added contributin guide.
+- Added license.
+
+### Changed
+- Changed tests so that they work with with the updated `NewsapiClient`.
+
 ## 0.2.0 - 2019-02-01
 
 ### Added
