@@ -11,7 +11,7 @@
 ## 0.2.1 - 2019-02-01
 
 ### Added
-- Added contributin guide.
+- Added contributing guide.
 - Added license.
 
 ### Changed
