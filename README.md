@@ -50,7 +50,7 @@ class News {
   // Get all norwegian sources.
   Future<Map<String, dynamic>> norwegianSources() async {
     final response = await client.request(Sources(
-      country: Country.norway,
+      country: Countries.norway,
     ));
     return response;
   }

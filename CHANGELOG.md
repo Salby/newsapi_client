@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Added new examples to README from `./example/example.dart`.
+
+### Changed
+- Updated `./example/example.dart` with more, better examples.
+
 ## 0.2.1 - 2019-02-01
 
 ### Added
