@@ -1,12 +1,15 @@
 # Changelog
 
-## [Unreleased]
+## 0.2.2 - 2019-02-03
 
 ### Added
 - Added new examples to README from `./example/example.dart`.
 
 ### Changed
 - Updated `./example/example.dart` with more, better examples.
+
+### Fixed
+- Fixed parameters not being encoded correctly when parsin enums or handling null values.
 
 ## 0.2.1 - 2019-02-01
 

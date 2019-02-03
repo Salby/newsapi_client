@@ -2,13 +2,15 @@ import '../categories.dart';
 import '../sort_by.dart';
 
 String encodeParameters(Map<String, dynamic> parameters) {
-  return parameters.keys.map((k) {
+  String encodedParameters = '';
+  for (String k in parameters.keys) {
     if (parameters[k] != null) {
       final String key = _handleKey(k);
-      final String value = Uri.encodeComponent(_handleValue(parameters[key]));
-      return '$key=$value';
+      final String value = Uri.encodeComponent(_handleValue(parameters[k]));
+      encodedParameters = encodedParameters + '&$key=$value';
     }
-  }).join('&');
+  }
+  return encodedParameters;
 }
 
 String _handleKey(String key) {
@@ -17,7 +19,12 @@ String _handleKey(String key) {
 }
 
 String _handleValue(dynamic value) {
-  if (value is SortBy || value is Categories) return value.toString();
+  if (value is SortBy) {
+    return value.toString().replaceAll('SortBy.', '');
+  }
+  if (value is Categories) {
+    return value.toString().replaceAll('Categories.', '');
+  }
   if (value is DateTime) {
     String day = value.day < 10 ? '0${value.day}' : value.day;
     return '${value.year}-${value.month}-$day';
