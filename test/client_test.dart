@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:newsapi_client/newsapi_client.dart';
 
 void main() {
-  NewsapiClient client = NewsapiClient('insert api key here');
+  NewsapiClient client = NewsapiClient('YOUR API KEY');
 
   test('topHeadlines request', () async {
     var response = await client.request(TopHeadlines(

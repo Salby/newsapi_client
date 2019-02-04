@@ -3,5 +3,5 @@ String buildUrl(String endpointUrl, String apiKey, {String parameters: null}) {
       endpointUrl +
       '?' +
       (parameters != null ? parameters : '') +
-      'apiKey=$apiKey';
+      '&apiKey=$apiKey';
 }

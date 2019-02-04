@@ -3,11 +3,16 @@ import '../sort_by.dart';
 
 String encodeParameters(Map<String, dynamic> parameters) {
   String encodedParameters = '';
+  int index = 0;
   for (String k in parameters.keys) {
     if (parameters[k] != null) {
+      if (index != 0) {
+        encodedParameters = encodedParameters + '&';
+      }
       final String key = _handleKey(k);
       final String value = Uri.encodeComponent(_handleValue(parameters[k]));
-      encodedParameters = encodedParameters + '&$key=$value';
+      encodedParameters = encodedParameters + '$key=$value';
+      index++;
     }
   }
   return encodedParameters;
