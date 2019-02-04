@@ -9,7 +9,8 @@
 - Updated `./example/example.dart` with more, better examples.
 
 ### Fixed
-- Fixed parameters not being encoded correctly when parsin enums or handling null values.
+- Fixed parameters not being encoded correctly when handling enums or null values.
+- Fixed `apiKey` not being added correctly to the final url.
 
 ## 0.2.1 - 2019-02-01
 
