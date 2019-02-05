@@ -1,6 +1,6 @@
 # Changelog
 
-[Unreleased]
+## 0.2.4 - 2019-02-05
 
 ### Added
 - Added missing `pageSize` and `page` parameters to `TopHeadlines` endpoint.
