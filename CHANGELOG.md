@@ -1,5 +1,13 @@
 # Changelog
 
+[Unreleased]
+
+### Added
+- Added missing `pageSize` and `page` parameters to `TopHeadlines` endpoint.
+
+### Deprecated
+- Removed *language* parameter from `TopHeadlines` endpoint. It didn't work in the first place, so this shouldn't affect anything.
+
 ## 0.2.2 - 2019-02-03
 
 ### Added
