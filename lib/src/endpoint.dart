@@ -13,7 +13,6 @@ abstract class Endpoint {
         parameters != null ? encodeParameters(parameters) : null;
     final String endpointUrl =
         buildUrl(url, apiKey, parameters: encodedParameters);
-    print(endpointUrl);
     final response = await client.get(endpointUrl);
     return _handleResponse(response);
   }
