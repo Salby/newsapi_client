@@ -10,6 +10,9 @@
 - Added documentation to `Everything` endpoint parameters.
 - Added tests for all the different endpoints and their parameters.
 
+### Changed
+- The API key is now delivered over an HTTP header instead of being a url-parameter.
+
 ### Deprecated
 - Removed *language* parameter from `TopHeadlines` endpoint. It didn't work in the first place, so this shouldn't affect anything.
 
