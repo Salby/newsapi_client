@@ -19,15 +19,22 @@ class TopHeadlines extends Endpoint {
     this.query,
     this.category,
     this.country,
-  }) : assert(sources != null ||
+    this.pageSize: 20,
+    this.page,
+  })  : assert(sources != null ||
             query != null ||
             category != null ||
-            country != null);
+            country != null),
+        assert(category != null && sources != null),
+        assert(sources != null && category != null && category != null),
+        assert(pageSize < 101 && pageSize > 0);
 
   final List<String> sources;
   final String query;
   final Categories category;
   final String country;
+  final int pageSize;
+  final int page;
 
   String get url => 'top-headlines';
   Map<String, dynamic> get parameters => {
@@ -35,5 +42,7 @@ class TopHeadlines extends Endpoint {
         'query': query,
         'category': category,
         'country': country,
+        'pageSize': pageSize,
+        'page': page,
       };
 }

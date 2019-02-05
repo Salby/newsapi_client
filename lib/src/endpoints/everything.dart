@@ -15,6 +15,7 @@ class Everything extends Endpoint {
     this.query,
     this.sources,
     this.domains,
+    this.excludeDomains,
     this.from,
     this.to,
     this.language,
@@ -28,6 +29,7 @@ class Everything extends Endpoint {
   final String query;
   final List<String> sources;
   final List<String> domains;
+  final List<String> excludeDomains;
   final DateTime from;
   final DateTime to;
   final String language;
@@ -40,6 +42,7 @@ class Everything extends Endpoint {
         'query': query,
         'sources': sources,
         'domains': domains,
+        'excludeDomains': excludeDomains,
         'from': from,
         'to': to,
         'language': language,
