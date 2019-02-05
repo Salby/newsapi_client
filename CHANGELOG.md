@@ -8,6 +8,7 @@
 - Added documentation to `Sources` endpoint parameters.
 - Added documentation to `TopHeadlines` endpoint parameters.
 - Added documentation to `Everything` endpoint parameters.
+- Added tests for all the different endpoints and their parameters.
 
 ### Deprecated
 - Removed *language* parameter from `TopHeadlines` endpoint. It didn't work in the first place, so this shouldn't affect anything.

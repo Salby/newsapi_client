@@ -25,8 +25,6 @@ class TopHeadlines extends Endpoint {
             query != null ||
             category != null ||
             country != null),
-        assert(category != null && sources != null),
-        assert(sources != null && category != null && category != null),
         assert(pageSize < 101 && pageSize > 0);
 
   /// A list of identifiers for the news sources or blogs

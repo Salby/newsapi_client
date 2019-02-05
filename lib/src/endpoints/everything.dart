@@ -9,7 +9,7 @@ import '../sort_by.dart';
 /// This endpoint suits article discovery and analysis, but
 /// can be used to retrieve articles for display, too.
 ///
-/// You must include at least one [query], [source], or [domain].
+/// You must include at least one [query], [sources], or [domains].
 class Everything extends Endpoint {
   Everything({
     this.query,

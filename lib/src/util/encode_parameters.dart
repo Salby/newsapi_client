@@ -24,6 +24,9 @@ String _handleKey(String key) {
 }
 
 String _handleValue(dynamic value) {
+  if (value is List<String>) {
+    return value.map((s) => s).join(',');
+  }
   if (value is SortBy) {
     return value.toString().replaceAll('SortBy.', '');
   }
