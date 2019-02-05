@@ -18,18 +18,15 @@ class TopHeadlines extends Endpoint {
     this.sources,
     this.query,
     this.category,
-    this.language,
     this.country,
   }) : assert(sources != null ||
             query != null ||
             category != null ||
-            language != null ||
             country != null);
 
   final List<String> sources;
   final String query;
   final Categories category;
-  final String language;
   final String country;
 
   String get url => 'top-headlines';
@@ -37,7 +34,6 @@ class TopHeadlines extends Endpoint {
         'sources': sources,
         'query': query,
         'category': category,
-        'language': language,
         'country': country,
       };
 }
