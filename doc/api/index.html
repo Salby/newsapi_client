@@ -42,15 +42,52 @@
   <div class="col-xs-12 col-sm-9 col-md-8 main-content">
       <section class="desc markdown">
         <h1 id="newsapi-client-for-dart">Newsapi client for dart</h1>
+<p>A client for the newsapi.org API written in dart.</p>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="top-headlines">Top headlines</h3>
 <pre class="language-dart"><code class="language-dart">import 'package:newsapi_client/newsapi_client.dart';
 
-// Initialize client with your API key.
-final client = NewsapiClient('your API key');
+class News {
 
-// Get top headlines from Canada.
-Future&lt;Map&lt;String, dynamic&gt;&gt; topHeadlinesCanada() async =&gt; client.topHeadlines({
-  'country': Countries.canada,
-});
+  final client = NewsapiClient('YOUR API KEY');
+
+  // Get the latest business headlines.
+  Future&lt;Map&lt;String, dynamic&gt;&gt; topBusiness() async {
+    final response = await client.request(TopHeadlines(
+      category: Categories.business,
+    ));
+    return response;
+  }
+
+  [...]
+</code></pre>
+<h3 id="everything">Everything</h3>
+<pre class="language-dart"><code class="language-dart">  [...]
+
+  // Get all articles with keyword: Microsoft from 2019-02-01 to now.
+  Future&lt;Map&lt;String, dynamic&gt;&gt; everythingMicrosoft() async {
+    final response = await client.request(Everything(
+      query: 'Microsoft',
+      from: DateTime.parse('2019-02-01'),
+      to: DateTime.now(),
+    ));
+    return response;
+  }
+
+  [...]
+</code></pre>
+<h3 id="sources">Sources</h3>
+<pre class="language-dart"><code class="language-dart">  [...]
+
+  // Get all norwegian sources.
+  Future&lt;Map&lt;String, dynamic&gt;&gt; norwegianSources() async {
+    final response = await client.request(Sources(
+      country: Countries.norway,
+    ));
+    return response;
+  }
+
+}
 </code></pre>
       </section>
       
@@ -71,7 +108,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; topHeadlinesCanada() async =&gt; client
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

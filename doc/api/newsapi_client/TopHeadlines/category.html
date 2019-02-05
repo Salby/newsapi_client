@@ -47,7 +47,8 @@
       </li>
       <li><a href="newsapi_client/TopHeadlines/category.html">category</a></li>
       <li><a href="newsapi_client/TopHeadlines/country.html">country</a></li>
-      <li><a href="newsapi_client/TopHeadlines/language.html">language</a></li>
+      <li><a href="newsapi_client/TopHeadlines/page.html">page</a></li>
+      <li><a href="newsapi_client/TopHeadlines/pageSize.html">pageSize</a></li>
       <li><a href="newsapi_client/TopHeadlines/parameters.html">parameters</a></li>
       <li><a href="newsapi_client/TopHeadlines/query.html">query</a></li>
       <li><a href="newsapi_client/TopHeadlines/sources.html">sources</a></li>
@@ -77,6 +78,12 @@
           <span class="name ">category</span>
           <div class="features">final</div>
         </section>
+        <section class="desc markdown">
+          <p>The category you want to get headlines for. Possible
+options are contained in the <a href="newsapi_client/Categories-class.html">Categories</a> enum.</p>
+<p>Note: you can't mix this parameter with the <a href="newsapi_client/TopHeadlines/country.html">country</a>
+or <a href="newsapi_client/TopHeadlines/category.html">category</a> parameters.</p>
+        </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span> </h2>
           <pre class="language-dart"><code class="language-dart">final Categories category
@@ -93,7 +100,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

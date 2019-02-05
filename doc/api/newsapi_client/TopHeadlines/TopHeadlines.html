@@ -47,7 +47,8 @@
       </li>
       <li><a href="newsapi_client/TopHeadlines/category.html">category</a></li>
       <li><a href="newsapi_client/TopHeadlines/country.html">country</a></li>
-      <li><a href="newsapi_client/TopHeadlines/language.html">language</a></li>
+      <li><a href="newsapi_client/TopHeadlines/page.html">page</a></li>
+      <li><a href="newsapi_client/TopHeadlines/pageSize.html">pageSize</a></li>
       <li><a href="newsapi_client/TopHeadlines/parameters.html">parameters</a></li>
       <li><a href="newsapi_client/TopHeadlines/query.html">query</a></li>
       <li><a href="newsapi_client/TopHeadlines/sources.html">sources</a></li>
@@ -74,7 +75,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">TopHeadlines</span>(<wbr>{<span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-category"><span class="type-annotation"><a href="newsapi_client/Categories-class.html">Categories</a></span> <span class="parameter-name">category</span>, </span> <span class="parameter" id="-param-language"><span class="type-annotation">String</span> <span class="parameter-name">language</span>, </span> <span class="parameter" id="-param-country"><span class="type-annotation">String</span> <span class="parameter-name">country</span></span> })
+      <span class="name ">TopHeadlines</span>(<wbr>{<span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-category"><span class="type-annotation"><a href="newsapi_client/Categories-class.html">Categories</a></span> <span class="parameter-name">category</span>, </span> <span class="parameter" id="-param-country"><span class="type-annotation">String</span> <span class="parameter-name">country</span>, </span> <span class="parameter" id="-param-pageSize"><span class="type-annotation">int</span> <span class="parameter-name">pageSize</span>: <span class="default-value">20</span>, </span> <span class="parameter" id="-param-page"><span class="type-annotation">int</span> <span class="parameter-name">page</span></span> })
     </section>
 
     
@@ -84,13 +85,14 @@
   this.sources,
   this.query,
   this.category,
-  this.language,
   this.country,
-}) : assert(sources != null ||
+  this.pageSize: 20,
+  this.page,
+})  : assert(sources != null ||
           query != null ||
           category != null ||
-          language != null ||
-          country != null);</code></pre>
+          country != null),
+      assert(pageSize &lt; 101 &amp;&amp; pageSize &gt; 0);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -102,7 +104,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

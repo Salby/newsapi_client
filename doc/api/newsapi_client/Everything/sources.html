@@ -46,6 +46,7 @@
         <a href="newsapi_client/Everything-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="newsapi_client/Everything/domains.html">domains</a></li>
+      <li><a href="newsapi_client/Everything/excludeDomains.html">excludeDomains</a></li>
       <li><a href="newsapi_client/Everything/from.html">from</a></li>
       <li><a href="newsapi_client/Everything/language.html">language</a></li>
       <li><a href="newsapi_client/Everything/page.html">page</a></li>
@@ -81,6 +82,12 @@
           <span class="name ">sources</span>
           <div class="features">final</div>
         </section>
+        <section class="desc markdown">
+          <p>A list of identifiers (maximum 20) for the news
+sources or blogs you want headlines from. Use the
+<a href="newsapi_client/Sources-class.html">Sources</a> endpoint to locate these programmatically
+or look at <a href="https://newsapi.org/sources">https://newsapi.org/sources</a>.</p>
+        </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span> </h2>
           <pre class="language-dart"><code class="language-dart">final List&lt;String&gt; sources
@@ -97,7 +104,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

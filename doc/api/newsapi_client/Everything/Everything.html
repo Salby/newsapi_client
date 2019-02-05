@@ -46,6 +46,7 @@
         <a href="newsapi_client/Everything-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="newsapi_client/Everything/domains.html">domains</a></li>
+      <li><a href="newsapi_client/Everything/excludeDomains.html">excludeDomains</a></li>
       <li><a href="newsapi_client/Everything/from.html">from</a></li>
       <li><a href="newsapi_client/Everything/language.html">language</a></li>
       <li><a href="newsapi_client/Everything/page.html">page</a></li>
@@ -78,7 +79,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">Everything</span>(<wbr>{<span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-domains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">domains</span>, </span> <span class="parameter" id="-param-from"><span class="type-annotation">DateTime</span> <span class="parameter-name">from</span>, </span> <span class="parameter" id="-param-to"><span class="type-annotation">DateTime</span> <span class="parameter-name">to</span>, </span> <span class="parameter" id="-param-language"><span class="type-annotation">String</span> <span class="parameter-name">language</span>, </span> <span class="parameter" id="-param-sortBy"><span class="type-annotation"><a href="newsapi_client/SortBy-class.html">SortBy</a></span> <span class="parameter-name">sortBy</span>, </span> <span class="parameter" id="-param-pageSize"><span class="type-annotation">int</span> <span class="parameter-name">pageSize</span>, </span> <span class="parameter" id="-param-page"><span class="type-annotation">int</span> <span class="parameter-name">page</span></span> })
+      <span class="name ">Everything</span>(<wbr>{<span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-domains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">domains</span>, </span> <span class="parameter" id="-param-excludeDomains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">excludeDomains</span>, </span> <span class="parameter" id="-param-from"><span class="type-annotation">DateTime</span> <span class="parameter-name">from</span>, </span> <span class="parameter" id="-param-to"><span class="type-annotation">DateTime</span> <span class="parameter-name">to</span>, </span> <span class="parameter" id="-param-language"><span class="type-annotation">String</span> <span class="parameter-name">language</span>, </span> <span class="parameter" id="-param-sortBy"><span class="type-annotation"><a href="newsapi_client/SortBy-class.html">SortBy</a></span> <span class="parameter-name">sortBy</span>, </span> <span class="parameter" id="-param-pageSize"><span class="type-annotation">int</span> <span class="parameter-name">pageSize</span>: <span class="default-value">20</span>, </span> <span class="parameter" id="-param-page"><span class="type-annotation">int</span> <span class="parameter-name">page</span></span> })
     </section>
 
     
@@ -88,15 +89,17 @@
   this.query,
   this.sources,
   this.domains,
+  this.excludeDomains,
   this.from,
   this.to,
   this.language,
   this.sortBy,
-  this.pageSize,
+  this.pageSize: 20,
   this.page,
-}) : assert((query != null &amp;&amp; query.isNotEmpty) ||
+})  : assert((query != null &amp;&amp; query.isNotEmpty) ||
           sources != null ||
-          (domains != null &amp;&amp; domains.isNotEmpty));</code></pre>
+          (domains != null &amp;&amp; domains.isNotEmpty)),
+      assert(pageSize &lt; 101 &amp;&amp; pageSize &gt; 0);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -108,7 +111,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

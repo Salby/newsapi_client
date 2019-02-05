@@ -67,7 +67,7 @@ large and small news sources and blogs. This includes
 breaking news as well as lesser articles.
 This endpoint suits article discovery and analysis, but
 can be used to retrieve articles for display, too.</p>
-<p>You must include at least one <a href="newsapi_client/Everything/query.html">query</a>, <code>source</code>, or <code>domain</code>.</p>
+<p>You must include at least one <a href="newsapi_client/Everything/query.html">query</a>, <a href="newsapi_client/Everything/sources.html">sources</a>, or <a href="newsapi_client/Everything/domains.html">domains</a>.</p>
     </section>
     
 
@@ -76,7 +76,7 @@ can be used to retrieve articles for display, too.</p>
 
       <dl class="constructor-summary-list">
         <dt id="Everything" class="callable">
-          <span class="name"><a href="newsapi_client/Everything/Everything.html">Everything</a></span><span class="signature">({<span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-domains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">domains</span>, </span> <span class="parameter" id="-param-from"><span class="type-annotation">DateTime</span> <span class="parameter-name">from</span>, </span> <span class="parameter" id="-param-to"><span class="type-annotation">DateTime</span> <span class="parameter-name">to</span>, </span> <span class="parameter" id="-param-language"><span class="type-annotation">String</span> <span class="parameter-name">language</span>, </span> <span class="parameter" id="-param-sortBy"><span class="type-annotation"><a href="newsapi_client/SortBy-class.html">SortBy</a></span> <span class="parameter-name">sortBy</span>, </span> <span class="parameter" id="-param-pageSize"><span class="type-annotation">int</span> <span class="parameter-name">pageSize</span>, </span> <span class="parameter" id="-param-page"><span class="type-annotation">int</span> <span class="parameter-name">page</span></span> })</span>
+          <span class="name"><a href="newsapi_client/Everything/Everything.html">Everything</a></span><span class="signature">({<span class="parameter" id="-param-query"><span class="type-annotation">String</span> <span class="parameter-name">query</span>, </span> <span class="parameter" id="-param-sources"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">sources</span>, </span> <span class="parameter" id="-param-domains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">domains</span>, </span> <span class="parameter" id="-param-excludeDomains"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> <span class="parameter-name">excludeDomains</span>, </span> <span class="parameter" id="-param-from"><span class="type-annotation">DateTime</span> <span class="parameter-name">from</span>, </span> <span class="parameter" id="-param-to"><span class="type-annotation">DateTime</span> <span class="parameter-name">to</span>, </span> <span class="parameter" id="-param-language"><span class="type-annotation">String</span> <span class="parameter-name">language</span>, </span> <span class="parameter" id="-param-sortBy"><span class="type-annotation"><a href="newsapi_client/SortBy-class.html">SortBy</a></span> <span class="parameter-name">sortBy</span>, </span> <span class="parameter" id="-param-pageSize"><span class="type-annotation">int</span> <span class="parameter-name">pageSize</span>: <span class="default-value">20</span>, </span> <span class="parameter" id="-param-page"><span class="type-annotation">int</span> <span class="parameter-name">page</span></span> })</span>
         </dt>
         <dd>
           
@@ -93,7 +93,17 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> 
         </dt>
         <dd>
-          
+          A list of domains (e.g. bbc.co.uk, techcrunch.com) to
+restrict the search to.
+          <div class="features">final</div>
+</dd>
+        <dt id="excludeDomains" class="property">
+          <span class="name"><a href="newsapi_client/Everything/excludeDomains.html">excludeDomains</a></span>
+          <span class="signature">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> 
+        </dt>
+        <dd>
+          A list of domains (e.g. bbc.co.uk, techcrunch.com) to
+remove from the results.
           <div class="features">final</div>
 </dd>
         <dt id="from" class="property">
@@ -101,7 +111,8 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; DateTime</span> 
         </dt>
         <dd>
-          
+          A date and optional time for the <em>oldest</em> article
+allowed. <a href="newsapi_client/Everything/from.html">[...]</a>
           <div class="features">final</div>
 </dd>
         <dt id="language" class="property">
@@ -109,7 +120,10 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; String</span> 
         </dt>
         <dd>
-          
+          The 2-letter ISO-639-1 code of the language you want
+to get headlines for. Possible options: 'ar', 'de',
+'en', 'es', 'fr', 'he', 'it', 'nl', 'no', 'pt', 'ru',
+'se', 'ud', 'zh'. <a href="newsapi_client/Everything/language.html">[...]</a>
           <div class="features">final</div>
 </dd>
         <dt id="page" class="property">
@@ -117,7 +131,7 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; int</span> 
         </dt>
         <dd>
-          
+          Use this to page through the results.
           <div class="features">final</div>
 </dd>
         <dt id="pageSize" class="property">
@@ -125,7 +139,8 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; int</span> 
         </dt>
         <dd>
-          
+          The number of results to return per page (request).
+20 is the default, 100 is the maximum.
           <div class="features">final</div>
 </dd>
         <dt id="parameters" class="property">
@@ -141,7 +156,7 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; String</span> 
         </dt>
         <dd>
-          
+          Keywords or phrase to search for.
           <div class="features">final</div>
 </dd>
         <dt id="sortBy" class="property">
@@ -149,7 +164,7 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; <a href="newsapi_client/SortBy-class.html">SortBy</a></span> 
         </dt>
         <dd>
-          
+          The order to sort the articles in. Possible options: <a href="newsapi_client/Everything/sortBy.html">[...]</a>
           <div class="features">final</div>
 </dd>
         <dt id="sources" class="property">
@@ -157,7 +172,10 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">String</span>&gt;</span></span> 
         </dt>
         <dd>
-          
+          A list of identifiers (maximum 20) for the news
+sources or blogs you want headlines from. Use the
+<a href="newsapi_client/Sources-class.html">Sources</a> endpoint to locate these programmatically
+or look at <a href="https://newsapi.org/sources">https://newsapi.org/sources</a>.
           <div class="features">final</div>
 </dd>
         <dt id="to" class="property">
@@ -165,7 +183,8 @@ can be used to retrieve articles for display, too.</p>
           <span class="signature">&#8594; DateTime</span> 
         </dt>
         <dd>
-          
+          A date and optional time for the <em>newest</em> article
+allowed. <a href="newsapi_client/Everything/to.html">[...]</a>
           <div class="features">final</div>
 </dd>
         <dt id="url" class="property">
@@ -265,6 +284,7 @@ can be used to retrieve articles for display, too.</p>
         <a href="newsapi_client/Everything-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="newsapi_client/Everything/domains.html">domains</a></li>
+      <li><a href="newsapi_client/Everything/excludeDomains.html">excludeDomains</a></li>
       <li><a href="newsapi_client/Everything/from.html">from</a></li>
       <li><a href="newsapi_client/Everything/language.html">language</a></li>
       <li><a href="newsapi_client/Everything/page.html">page</a></li>
@@ -296,7 +316,7 @@ can be used to retrieve articles for display, too.</p>
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

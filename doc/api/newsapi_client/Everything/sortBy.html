@@ -46,6 +46,7 @@
         <a href="newsapi_client/Everything-class.html#instance-properties">Properties</a>
       </li>
       <li><a href="newsapi_client/Everything/domains.html">domains</a></li>
+      <li><a href="newsapi_client/Everything/excludeDomains.html">excludeDomains</a></li>
       <li><a href="newsapi_client/Everything/from.html">from</a></li>
       <li><a href="newsapi_client/Everything/language.html">language</a></li>
       <li><a href="newsapi_client/Everything/page.html">page</a></li>
@@ -81,6 +82,15 @@
           <span class="name ">sortBy</span>
           <div class="features">final</div>
         </section>
+        <section class="desc markdown">
+          <p>The order to sort the articles in. Possible options:</p><ul><li>
+<p><a href="newsapi_client/SortBy-class.html">SortBy.relevancy</a>: Articles more closely related
+                    to <a href="newsapi_client/Everything/query.html">query</a> come first.</p></li><li>
+<p><a href="newsapi_client/SortBy-class.html">SortBy.popularity</a>: Articles from popular sources
+                     and publishers come first.</p></li><li>
+<p><code>SortBy.publishedAt</code>: Newest articles come first.</p></li></ul>
+<p>Defaults to <code>SortBy.publishedAt</code>.</p>
+        </section>
                 <section class="summary source-code" id="source">
           <h2><span>Implementation</span> </h2>
           <pre class="language-dart"><code class="language-dart">final SortBy sortBy
@@ -97,7 +107,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>

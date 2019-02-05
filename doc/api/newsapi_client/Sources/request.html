@@ -82,9 +82,11 @@
       <pre class="language-dart"><code class="language-dart">Future&lt;Map&lt;String, dynamic&gt;&gt; request(String apiKey) async {
   final String encodedParameters =
       parameters != null ? encodeParameters(parameters) : null;
-  final String endpointUrl =
-      buildUrl(url, apiKey, parameters: encodedParameters);
-  final response = await client.get(endpointUrl);
+  final String endpointUrl = buildUrl(url, parameters: encodedParameters);
+  final response = await client.get(
+    endpointUrl,
+    headers: {&#39;X-Api-Key&#39;: apiKey},
+  );
   return _handleResponse(response);
 }</code></pre>
     </section>
@@ -98,7 +100,7 @@
 
 <footer>
   <span class="no-break">
-    newsapi_client 0.2.0
+    newsapi_client 0.2.4
   </span>
 
 </footer>
