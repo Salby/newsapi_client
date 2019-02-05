@@ -20,11 +20,12 @@ class Everything extends Endpoint {
     this.to,
     this.language,
     this.sortBy,
-    this.pageSize,
+    this.pageSize: 20,
     this.page,
-  }) : assert((query != null && query.isNotEmpty) ||
+  })  : assert((query != null && query.isNotEmpty) ||
             sources != null ||
-            (domains != null && domains.isNotEmpty));
+            (domains != null && domains.isNotEmpty)),
+        assert(pageSize < 101 && pageSize > 0);
 
   /// Keywords or phrase to search for.
   final String query;
