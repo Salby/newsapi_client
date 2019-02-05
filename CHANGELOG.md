@@ -5,6 +5,9 @@
 ### Added
 - Added missing `pageSize` and `page` parameters to `TopHeadlines` endpoint.
 - Added missing `excludeDomains` parameter to `Everything` endpoint.
+- Added documentation to `Sources` endpoint parameters.
+- Added documentation to `TopHeadlines` endpoint parameters.
+- Added documentation to `Everything` endpoint parameters.
 
 ### Deprecated
 - Removed *language* parameter from `TopHeadlines` endpoint. It didn't work in the first place, so this shouldn't affect anything.

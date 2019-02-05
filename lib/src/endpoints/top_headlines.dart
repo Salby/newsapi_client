@@ -29,11 +29,40 @@ class TopHeadlines extends Endpoint {
         assert(sources != null && category != null && category != null),
         assert(pageSize < 101 && pageSize > 0);
 
+  /// A list of identifiers for the news sources or blogs
+  /// you want headlines from. Use the [Sources] endpoint
+  /// to locate these programatically or look at
+  /// https://newsapi.org/sources.
+  ///
+  /// Note: you can't mix this parameter with the [sources]
+  /// parameter.
   final List<String> sources;
+
+  /// Keywords or phrase to search for.
   final String query;
+
+  /// The category you want to get headlines for. Possible
+  /// options are contained in the [Categories] enum.
+  ///
+  /// Note: you can't mix this parameter with the [country]
+  /// or [category] parameters.
   final Categories category;
+
+  /// The 2-letter ISO 3166-1 code for the country you want
+  /// to get headlines for. Possible options are contained
+  /// in the [Countries] class or can be written as
+  /// strings.
+  ///
+  /// Note: you can't mix this parameter with the [sources]
+  /// parameter.
   final String country;
+
+  /// The number of results to return per page (request).
+  /// 20 is the default, 100 is the maximum.
   final int pageSize;
+
+  /// Use this to page through the results if the total
+  /// results found is greater than the page size.
   final int page;
 
   String get url => 'top-headlines';
