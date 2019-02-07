@@ -32,6 +32,20 @@ void main() {
       ));
       expect(response, contains('articles'));
     });
+
+    test('Request with `pageSize` parameter', () async {
+      var response = await client.request(TopHeadlines(
+        pageSize: 10,
+      ));
+      expect(response, contains('articles'));
+    });
+
+    test('Request with `page` parameter', () async {
+      var response = await client.request(TopHeadlines(
+        page: 2,
+      ));
+      expect(response, contains('articles'));
+    });
   });
 
   group('Everything', () {
@@ -85,6 +99,22 @@ void main() {
       var response = await client.request(Everything(
         query: 'Microsoft', // Required
         sortBy: SortBy.popularity,
+      ));
+      expect(response, contains('articles'));
+    });
+
+    test('Request with `pageSize` parameter', () async {
+      var response = await client.request(Everything(
+        query: 'Microsoft', // Required
+        pageSize: 2,
+      ));
+      expect(response, contains('articles'));
+    });
+
+    test('Request with `page` parameter', () async {
+      var response = await client.request(Everything(
+        query: 'Microsoft', // Required
+        page: 2,
       ));
       expect(response, contains('articles'));
     });
