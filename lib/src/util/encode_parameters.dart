@@ -34,7 +34,7 @@ String _handleValue(dynamic value) {
     return value.toString().replaceAll('Categories.', '');
   }
   if (value is DateTime) {
-    String day = value.day < 10 ? '0${value.day}' : value.day;
+    String day = value.day < 10 ? '0${value.day}' : value.day.toString();
     return '${value.year}-${value.month}-$day';
   }
   return value.toString();
