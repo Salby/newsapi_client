@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.5 - 2019-02-08
+
+### Added
+- Added a few tests for the `pageSize` and `page` parameters.
+- `Endpoint` object can now be accessed.
+
 ## 0.2.4 - 2019-02-05
 
 ### Added
