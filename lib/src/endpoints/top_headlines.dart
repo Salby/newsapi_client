@@ -19,7 +19,7 @@ class TopHeadlines extends Endpoint {
     this.query,
     this.category,
     this.country,
-    this.pageSize: 20,
+    this.pageSize = 20,
     this.page,
   })  : assert(sources != null ||
             query != null ||

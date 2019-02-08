@@ -20,7 +20,7 @@ class Everything extends Endpoint {
     this.to,
     this.language,
     this.sortBy,
-    this.pageSize: 20,
+    this.pageSize = 20,
     this.page,
   })  : assert((query != null && query.isNotEmpty) ||
             sources != null ||
