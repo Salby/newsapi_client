@@ -33,7 +33,7 @@ class News {
   Future<Map<String, dynamic>> everythingMicrosoft() async {
     final response = await client.request(Everything(
       query: 'Microsoft',
-      from: DateTime.parse('2019-02-01'),
+      from: DateTime(2019, 2, 1),
       to: DateTime.now(),
     ));
     return response;
