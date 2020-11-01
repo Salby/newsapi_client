@@ -1,5 +1,5 @@
-String buildUrl(String endpointUrl, {String parameters = null}) {
-  return 'https://newsapi.org/v2/' +
+String buildUrl(String baseUrl, String endpointUrl, {String parameters = null}) {
+  return baseUrl +
       endpointUrl +
       '?' +
       (parameters != null ? parameters : '');

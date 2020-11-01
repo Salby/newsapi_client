@@ -8,10 +8,10 @@ abstract class Endpoint {
   Map<String, dynamic> get parameters;
   final Client client = Client();
 
-  Future<Map<String, dynamic>> request(String apiKey) async {
+  Future<Map<String, dynamic>> request(String apiKey, String baseUrl) async {
     final String encodedParameters =
         parameters != null ? encodeParameters(parameters) : null;
-    final String endpointUrl = buildUrl(url, parameters: encodedParameters);
+    final String endpointUrl = buildUrl(baseUrl, url, parameters: encodedParameters);
     final response = await client.get(
       endpointUrl,
       headers: {'X-Api-Key': apiKey},
